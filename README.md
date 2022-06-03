@@ -10,6 +10,11 @@ First use the `Hex.cs` namespace like this:
 using Hex.cs
 ```
 
-Now you can use the Hex.cs features in your Project!
+To access the Hex.cs features, you will need to use the `Hexadecimal` class
 
+To get hex bytes from a File or Stream use `Hexadecimal.GetHex()`
+
+If you want to convert the Hex Values to Text, use `Hexadecimal.GetString()`
+
+<br>
 Look at the Examples for a simple example.
