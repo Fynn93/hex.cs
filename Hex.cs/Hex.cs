@@ -105,7 +105,7 @@ namespace Hex.cs
         }
 
         /// <summary>
-        /// Gets Byte Array from Hex Values
+        /// Gets a Byte Array from Hex Values
         /// </summary>
         /// <param name="hex">The Hex Values</param>
         /// <returns>A Byte Array with the Hex Values</returns>
