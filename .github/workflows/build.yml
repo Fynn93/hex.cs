@@ -1,0 +1,44 @@
+name: HEX
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Build Hex.cs Debug
+      run: dotnet build
+    - name: Build Examples Debug
+      run: dotnet build examples
+    - name: Build Examples Release
+      run: dotnet publish examples -c Release
+    - name: Upload Hex.cs Debug
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: Hex.cs Debug
+        path: "Hex.cs\\bin\\Debug\\net6.0"
+        
+    - name: Upload Examples Debug
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: Examples Debug
+        path: "Examples\\bin\\Debug\\net6.0"
+        
+    - name: Upload Examples Release
+      uses: actions/upload-artifact@v3.0.0
+      with:
+        name: Examples Release
+        path: "Hex.cs\\bin\\Release\\net6.0\\publish"
