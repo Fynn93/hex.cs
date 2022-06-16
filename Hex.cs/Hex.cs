@@ -113,6 +113,9 @@ namespace Hex.cs
         {
             if (hex.Contains('-'))
                 hex = hex.Replace("-", "");
+            
+            if (hex.Contains(' '))
+                hex = hex.Replace(" ", "");
 
             byte[] raw = new byte[hex.Length / 2];
             for (int i = 0; i < raw.Length; i++)
