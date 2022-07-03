@@ -7,7 +7,5 @@
 *.props
 *.cache
 *.targets
-*.cache
 
 *.g.cs
-*.bin
